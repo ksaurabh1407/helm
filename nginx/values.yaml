@@ -1,0 +1,17 @@
+namespace:  
+  name: demo 
+
+
+deployment:
+  name: nginx-deployment
+  namespace: demo
+  replicas: 3
+  image: nginx
+  memory: 256Mi
+  cpu: 50m
+  imagepullpolicy: IfNotPresent
+  imagetag: alpine
+
+configmap:
+  version: alpine     
+

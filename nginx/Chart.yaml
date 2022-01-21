@@ -1,0 +1,9 @@
+apiVersion: v1
+name: nginx-deployment 
+description: Install nginx application using helm charts
+keywords:
+- nginx
+version: 1.0.0
+maintainers:
+- name: Kumar Saurabh 
+  email: na@xyz.com

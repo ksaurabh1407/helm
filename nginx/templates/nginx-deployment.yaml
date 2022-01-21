@@ -1,0 +1,27 @@
+apiVersion: apps/ v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment.name }}
+  namespace: {{ .Values.deployment.namespace }}
+  labels:
+    app: {{ .Values.deployment.label.app }}      
+spec:
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: {{ .Values.deployment.image }}:{{ .Values.deployment.imagetag }}
+          imagePullPolicy: {{ .Values.deployment.imagepullpolicy }}
+          resources:
+            requests:
+              memory: {{ .Values.deployment.memory }}
+              cpu: {{ .Values.deployment.cpu }}       
+          ports:
+                  - containerPort: 80        
