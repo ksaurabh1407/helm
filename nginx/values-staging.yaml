@@ -1,19 +1,19 @@
 namespace:  
-  name: demo 
+  name: staging
 
 
 deployment:
   name: nginx-deployment
-  namespace: demo
+  namespace: staging
   replicas: 3
   image: nginx
-  memory: 256Mi
+  memory: 128Mi
   cpu: 50m
   imagepullpolicy: IfNotPresent
-  imagetag: alpine
+  imagetag: 1.18.0
   label:
     app: nginx
 
 configmap:
-  version: alpine     
+  version: 1.18.0    
 

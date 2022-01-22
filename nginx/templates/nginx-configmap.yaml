@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: nginx-configmap
+  namespace: {{ .Values.deployment.namespace }}
 data:
   # property-like keys; each key maps to a simple value
   version: {{ .Values.configmap.version }}
