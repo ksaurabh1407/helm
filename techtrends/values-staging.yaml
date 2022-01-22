@@ -15,7 +15,7 @@ deployment:
         livenessProbe:
           path: /healthz
         readinessProbe:
-          path: /healtz
+          path: /healthz
         containerPort: 3111
         resources:
           requests:
