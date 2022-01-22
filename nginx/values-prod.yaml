@@ -1,0 +1,19 @@
+namespace:  
+  name: prod
+
+
+deployment:
+  name: nginx-deployment
+  namespace: prod 
+  replicas: 2
+  image: nginx
+  memory: 256Mi
+  cpu: 70m
+  imagepullpolicy: IfNotPresent
+  imagetag: 1.17.0
+  label:
+    app: nginx
+
+configmap:
+  version: 1.17.0    
+
